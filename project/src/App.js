@@ -1,21 +1,21 @@
 import './App.css';
-import logo from './assets/logo_white.svg'
-import logo_black from './assets/logo_black.png'
+import logo from './assets/icons/logo_white.svg'
+import logo_black from './assets/icons/logo_black.png'
 import {Sidebar} from './components/Sidebar';
 import {SellerHeader} from './components/SellerHeader';
-import { AddProduct } from './components/AddProduct';
+// import { AddProduct } from './components/AddProduct';
+import { GlobalContext } from './context/GlobalContext';
+import { ProductList } from './components/ProductList';
 
 function App() {
   return (
-    <div className="App">
-      <div className='container'>
-        <SellerHeader image={logo} />
-        <div className='container-2'>
-          <Sidebar image={logo_black}/>
-          <AddProduct />
-        </div>
-      </div>
-    </div>
+    <GlobalContext>
+          <SellerHeader image={logo} />
+          <div className='flex-container'>
+            <Sidebar image={logo_black}/>
+            <ProductList />
+          </div>
+    </GlobalContext>
   );
 }
 

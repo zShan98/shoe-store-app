@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
+import { GetContext } from "../context/GlobalContext";
+
 export const AddProduct = ()=> {
 
-let productlist = [];
+const [product, setProduct] = useState({id: '', title: '', description: '', category: '', price: 0, delivery: 0, img: ''});
+const {addProduct} = GetContext();
 
-const [products, setProducts] = useState(productlist);
-
-let product = {id: '', title: '', description: '', category: '', price: 0, delivery: 0, img: ''};
-
+const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod tristique interdum. Nam sit amet ex ipsum. Morbi congue, lorem at semper iaculis, massa dui tincidunt justo, eu venenatis risus eros vel dolor. Maecenas mattis porta neque, vel faucibus lorem vestibulum non. Quisque vitae dignissim dolor. Mauris fermentum faucibus pulvinar. Fusce bibendum odio ut neque finibus, at bibendum metus sodales. Duis ullamcorper massa rutrum aliquet vestibulum. Nullam convallis ex at dui viverra, ut imperdiet erat gravida. Nam efficitur augue vitae nunc interdum luctus. Nunc ullamcorper, velit vitae efficitur lacinia, metus tortor egestas justo, id ultricies orci nisi et arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
 const resetForm = () => { 
     document.getElementById("add-product-form").reset();
@@ -16,46 +16,40 @@ const resetForm = () => {
 const handleForm = (e)=>{
 
     e.preventDefault();
-    product = {id: 1, title: e.target[0].value,
-            description: e.target[1].value, category: e.target[4].value, price: e.target[2].value,
-            delivery: e.target[3].value, img: e.target[5].value};
-
-        productlist = [...productlist, product]
-        setProducts(productlist);
-        console.log(products);
-        resetForm();
+    setProduct({id: product.id+1, title: e.target[0].value, description: e.target[1].value, category: e.target[4].value, price: e.target[2].value, delivery: e.target[3].value, img: e.target[5].value});
+    addProduct(product);
+    resetForm();
 
 }
-
 
 return(
     <div className="addProduct">
         <form id="add-product-form" onSubmit={handleForm}>
-            <h1>Add Product</h1>
+            <h1 className="product-header">Add Product</h1>
             <div className="inputbox">
                 <label>Product Title</label>
                 <input type= "text" placeholder="My Product" required/>
             </div>
             <div className="inputbox">
                 <label htmlFor="product desc">Product description</label>
-                <textarea name="product desc" required></textarea>
+                <textarea name="product desc" placeholder={lorem} required></textarea>
             </div>
             <div className="siblings">
                 <div className="inputbox price">
                     <label>Product Pricing</label>
-                    <input min="1" type="number" required/>
+                    <input min="1" type="number" placeholder="1400" required/>
                 </div>
                 <div className="inputbox price">
                     <label>Product Delivery</label>
-                    <input min="0" type="number" required/>
+                    <input min="0" max="500"type="number" placeholder="200" required/>
                 </div>
             </div>
             <div className="siblings">
                 <div className="inputbox">
-                    <label for="Product-category">Product Category</label>
-                    <input list="category" name="Product-category" id="Product-category" required />
+                    <label htmlFor="Product-category">Product Category</label>
+                    <input list="category" name="Product-category" id="Product-category" placeholder="Sneakers" required />
                     <datalist id="category" >
-                        <option value="Sneakers" />
+                        <option value="Sneakers"/>
                         <option value="Boots" />
                         <option value="Lofers" />
                         <option value="Sandles" />
