@@ -301,3 +301,318 @@ margin: 0px 30px;
     background: #EAEAEA;
     color: #676767;
 }
+
+
+
+/* ---------------------------------------------------- Aqib.css --------------------------------------------------- */
+
+*{
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: rgb(236, 229, 229);
+  }
+  
+  /* -------------------------------------- side-bar ----------------------------------------------- */
+  
+  .sidebar{
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    left: 0%;
+    background-color:rgb(209, 204, 204);
+   
+  }
+  
+  .active{
+    left: 0%;
+  }
+  
+  .sidebar ul{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding-left: 0px;
+  
+  }
+  
+  .sidebar ul li{
+    width: 85%;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+  }
+  
+  .sidebar li a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  .sidebar li:hover{
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .sidebar li i{
+    margin-right: 15px;
+  }
+  
+  /* ------------------------------------------------------------------------------------- */
+  
+  
+  
+  /* -------------------------------------- nav-bar ----------------------------------------------- */
+  
+  .navbar{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0px;
+  }
+  
+  .nav-img{
+    width: 30%;
+    color: aliceblue;
+  }
+  
+  /* ------------------------------------------------------------------------------------- */
+  
+  
+  
+  /* -------------------------------------- main - page ----------------------------------------------- */
+  
+  
+  .main_page{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* -------------------------------------- left-page(sidebar) ----------------------------------------------- */
+  
+  
+  .left_content{
+    width: 20%;
+  }
+  
+  /* ----------------------------- right-page(the imp part of project) -------------------------------- */
+  
+  .right_content{
+    width: 80%;
+    background-color: rgb(107, 102, 102);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  
+  /* Order receipt component*/
+  
+  .receipt{
+    padding-top: 20px;
+    background-color: white;
+  }
+  
+  /* Orders component*/
+  
+  .order_structure{
+    background-color: white;
+    border-radius: 15px;
+    width: 95%;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgb(181, 179, 179);
+  
+  }
+  
+   .order_table{
+    background-color: aliceblue;
+    width: 95%;
+    height: auto;
+  }
+  
+  .order_table thead{
+    border: 2px solid black;
+    background-color: gray;
+    
+  }
+  .order_table thead th{
+    padding: 6px;
+    background-color: rgb(205, 200, 200);
+  
+  }
+  
+  .order_table tr{
+      text-align: center;
+  }
+  
+  /* Order Filters component*/
+  
+  .filters{
+    width: 95%;
+    padding: 5px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  
+  .left_filters button{
+    background-color: transparent;
+    border: none;
+    margin-right: 15px;
+  }
+  
+  .right_filters button{
+    background-color: rgb(238, 231, 231);
+    border: 1px solid rgba(192, 192, 192, 0.596);
+  }
+  
+  /* Order Info component*/
+  
+  .summary{
+    margin: 30px auto;
+    border-radius: 10px;
+    width: 95%;
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly;
+    background-color: white;
+    border: 1px solid rgb(181, 179, 179);
+  }
+  
+  .flex_div{
+    width: 22%;
+    height: 80%;
+    text-align: center;
+  }
+  
+  .flex_div:nth-child(even){
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-left-style: dashed;
+    border-right-style: dashed;
+  }
+  
+  .flex_div h3{
+    text-decoration:underline;
+  }
+  
+  /* Admin.jsx component */
+  
+  /* Admin div 1 css */
+  
+  .Admin_flex{
+    height: 100%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .Admin_flexdiv{
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 31%;
+  }
+  
+  .Admin_flexdiv_1{
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  .Afd1-child{
+    background-color: rgb(255, 255, 255);
+    height: 48%;
+    width: 100%;
+  }
+  
+  .Afd1-child{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .Afd1-child div{
+    width: 45%;
+    height: auto; 
+    text-align: center;
+  
+  }
+  .Afd1-child div h1{
+    position: relative;
+    top: 10px;
+    left: 7px;
+  }
+  
+  .Afd1-child div i{
+    font-size: 5.5rem;
+    color: rgba(14, 14, 14, 0.164);
+    margin-top: -70px;
+  }
+  .Afd1-child div p{
+    margin-top: -15px;
+    text-align: left;
+  }
+  .Afd1-child div h3{
+    font-size: 20.5px;
+  }
+  
+  /* Admin div2 css */
+  
+  .Admin_flexdiv_2 h1{
+    padding-left: 10px;
+  }
+  
+  .Admin_flexdiv_2 ul{
+    list-style: none;
+    font-size: 1.2rem;
+    width: 90%;
+  }
+  
+  .Admin_flexdiv_2 ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: -20px;
+    border-bottom: 0.3rem solid rgb(117, 115, 115);
+    font-weight: 500;
+    animation: Loading 5s forwards;
+  }
+  
+  @keyframes Loading{
+    0%{
+      width: 0%;
+    }
+    100%{
+      width: 100%;
+    }
+  }
