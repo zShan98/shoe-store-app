@@ -1,15 +1,13 @@
-Software Requirement and Design Specifications
-Campus Kick’s
+## Software Requirement and Design Specifications<br>
+# Campus Kick’s<br>
 
-Course Code:
-Instructor: Miss Nida Munawwar
-Project Team:
-•	Khalid Khurshid Siddiqui(21K-4673)
-•	Aqib Ali(21K-4518)
-•	Syed Zeeshan Ahmed(21K-4844)
-Submission Date: 04-12-2023
-
-
+### Course Code:<br>
+### Instructor: Miss Nida Munawwar<br>
+### Project Team:
+### •	Khalid Khurshid Siddiqui(21K-4673)
+### •	Aqib Ali(21K-4518)
+### •	Syed Zeeshan Ahmed(21K-4844)
+### Submission Date: 04-12-2023
 
 
 
@@ -27,7 +25,9 @@ Submission Date: 04-12-2023
 
 
 
-Table of Contents
+
+
+# Table of Contents
 
 1. INTRODUCTION.....................................................................................................................................5
 1.1. Purpose of Document.........................................................................................................................5
