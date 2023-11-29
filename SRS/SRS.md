@@ -93,14 +93,14 @@ The scope of Campus Kicks includes an e-commerce platform with features such as 
 ## 2.3. Not In Scope
 The project does not include physical inventory management or brick-and-mortar store operations.
 ## 2.4. Project Objectives
-•	Provide an intuitive and user-friendly online shopping experience.
-•	Cater specifically to the preferences of students and young individuals.
-•	Ensure secure and reliable transaction processing.
+*	Provide an intuitive and user-friendly online shopping experience.
+*	Cater specifically to the preferences of students and young individuals.
+*	Ensure secure and reliable transaction processing.
 ## 2.5. Stakeholders
-•	Customers (students and young individuals)
-•	Developers
-•	Designers
-•	Project Managers
+*	Customers (students and young individuals)
+*	Developers
+*	Designers
+*	Project Managers
 ## 2.6. Operating Environment
 The system will operate on web browsers and mobile devices, ensuring compatibility with popular platforms like Chrome, Firefox, Safari, and Edge.
 ## 2.7. System Constraints
@@ -116,11 +116,11 @@ Integration with payment gateways for secure transactions.
 The system will communicate with users via email for order confirmations and updates.
 # 4. FUNCTIONAL REQUIREMENTS
 ## 4.1. FUNCTIONAL HIERARCHY
-•	User Authentication
-•	Product Browsing
-•	Cart Management
-•	Checkout Process
-•	Order Confirmation
+*	User Authentication
+*	Product Browsing
+*	Cart Management
+*	Checkout Process
+*	Order Confirmation
 ## 4.2. Use Cases
 ### 4.2.1. User Authentication
 •	Description: Users can create accounts or log in.
@@ -130,13 +130,13 @@ The system will communicate with users via email for order confirmations and upd
 (Include similar sections for other use cases)
 # 5. NON-FUNCTIONAL REQUIREMENTS
 ## 5.1. Performance Requirements
-•	The website shall load within 3 seconds on a standard internet connection.
+*	The website shall load within 3 seconds on a standard internet connection.
 ## 5.2. Safety Requirements
-•	Customer data shall be encrypted to ensure privacy.
+*	Customer data shall be encrypted to ensure privacy.
 ## 5.3. Security Requirements
-•	Secure Sockets Layer (SSL) encryption for all data transmission.
+*	Secure Sockets Layer (SSL) encryption for all data transmission.
 ## 5.4. User Documentation
-•	Comprehensive user guides and FAQs will be provided on the website.
+*	Comprehensive user guides and FAQs will be provided on the website.
 # 6. SYSTEM ARCHITECTURE
 ## 6.1. SYSTEM LEVEL ARCHITECTURE
 The system will follow a client-server architecture.
@@ -146,13 +146,13 @@ The software will be developed using a scalable and modular architecture to acco
 The design strategy focuses on a responsive and aesthetically pleasing user interface, prioritizing user experience.
 # 8. DETAILED SYSTEM DESIGN
 ## 8.1. DATABASE DESIGN
-•	Database management system: MySQL
-•	Tables: Users, Products, Orders
+*	Database management system: MySQL
+*	Tables: Users, Products, Orders
 (Include detailed schema and relationships)
 # 9. APPLICATION DESIGN
-•	User Interface: Responsive web design
-•	Frontend: HTML, CSS, JavaScript
-•	Backend: Node.js, Express.js
+*	User Interface: Responsive web design
+*	Frontend: HTML, CSS, JavaScript
+*	Backend: Node.js, Express.js
 (Include other relevant details)
 # 10. REFERENCES
 List any external documents or resources referenced during the development.
