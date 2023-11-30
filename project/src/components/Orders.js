@@ -2,7 +2,7 @@ import React from "react";
 import Order_recipt from "./Order_recipt";
 import Order_filters from "./Order_filters";
 
-const Orders = () => {
+export const Orders = () => {
   return (
     <>
       <div className="order_structure">
@@ -31,4 +31,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+

@@ -1,14 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { GetContext } from "../context/GlobalContext";
-
-export const AddProduct = ()=> {
+import { Routes, Route, Link } from "react-router-dom";
+export const AddProduct = (props)=> {
 
 const [product, setProduct] = useState({id: '', title: '', description: '', category: '', price: 0, delivery: 0, img: ''});
 const {addProduct} = GetContext();
 
-const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod tristique interdum. Nam sit amet ex ipsum. Morbi congue, lorem at semper iaculis, massa dui tincidunt justo, eu venenatis risus eros vel dolor. Maecenas mattis porta neque, vel faucibus lorem vestibulum non. Quisque vitae dignissim dolor. Mauris fermentum faucibus pulvinar. Fusce bibendum odio ut neque finibus, at bibendum metus sodales. Duis ullamcorper massa rutrum aliquet vestibulum. Nullam convallis ex at dui viverra, ut imperdiet erat gravida. Nam efficitur augue vitae nunc interdum luctus. Nunc ullamcorper, velit vitae efficitur lacinia, metus tortor egestas justo, id ultricies orci nisi et arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-
+const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod tristique interdum. Nam sit amet ex ipsum. Morbi congue, lorem at semper iaculis, massa dui tincidunt justo, eu venenatis risus eros vel dolor.";
 const resetForm = () => { 
     document.getElementById("add-product-form").reset();
   }
@@ -16,10 +15,11 @@ const resetForm = () => {
 const handleForm = (e)=>{
 
     e.preventDefault();
-    setProduct({id: product.id+1, title: e.target[0].value, description: e.target[1].value, category: e.target[4].value, price: e.target[2].value, delivery: e.target[3].value, img: e.target[5].value});
-    addProduct(product);
-    resetForm();
-
+    console.log(e);
+    addProduct({id: product.id+1, title: e.target[0].value, description: e.target[1].value, category: e.target[4].value, price: e.target[2].value, delivery: e.target[3].value, img: e.target[5].value});
+    console.log({id: product.id+1, title: e.target[0].value, description: e.target[1].value, category: e.target[4].value, price: e.target[2].value, delivery: e.target[3].value, img: e.target[5].value});
+    // resetForm();
+    props.stateOne(false);
 }
 
 return(
@@ -63,7 +63,7 @@ return(
                 </div>
             </div>
             <div className="centre">
-                <button type="submit" className="s-btn">Add Product</button>
+                    <button type="submit" className="s-btn">Add Product</button>
             </div>
         </form>
     </div>
