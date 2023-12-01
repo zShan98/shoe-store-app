@@ -7,7 +7,7 @@ const Orders_Info = () => {
         <div className="flex_div">
           <h3>Total Orders</h3>
           <h4 style={{ color: "blue" }}>
-            <i className="fa-solid fa-box"></i>30
+            <i className="fa-solid fa-box"></i> 30
           </h4>
         </div>
         <div className="flex_div">
