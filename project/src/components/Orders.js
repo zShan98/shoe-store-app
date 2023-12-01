@@ -1,6 +1,7 @@
 import React from "react";
 import Order_recipt from "./Order_recipt";
 import Order_filters from "./Order_filters";
+import orders from "../orders.json";
 
 export const Orders = () => {
   return (
@@ -17,16 +18,23 @@ export const Orders = () => {
             <th>Status</th>
             <th>Items</th>
             <th>Deleivery</th>
+            <th>Delivered</th>
           </thead>
 
-          <Order_recipt />
-          <Order_recipt />
-          <Order_recipt />
-          <Order_recipt />
-          <Order_recipt />
-          <Order_recipt />
-          <Order_recipt />
-          <Order_recipt />
+          {orders.receipts.map((item) => {
+            return (
+              <Order_recipt
+                order_id={item.order_id}
+                date={item.date}
+                customer_name={item.customer_name}
+                channel={item.channel}
+                payment={item.payment}
+                stats={item.status}
+                no_items={item.no_items}
+                Deleivery={item.Deleivery}
+              />
+            );
+          })}
         </table>
       </div>
     </>
