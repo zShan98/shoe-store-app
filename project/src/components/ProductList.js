@@ -25,13 +25,12 @@ export const ProductList = (props)=> {
         return (
         <>
                 <tr className="">
-                    <td>{item.title}</td>
+                    <Link to={`/products/update-product`} state={{Data: item}}><td>{item.title}</td></Link>
                     <td>{item.description}</td>
                     <td>{item.category}</td>
                     <td>{item.price}</td>
                     <td><img src={item.img} alt="product"/></td>
                     <button className="x-btn" onClick={()=>handleDelete(item.id)}> x </button>
-
                 </tr>
 
         </>
@@ -47,7 +46,6 @@ export const ProductList = (props)=> {
                 <button className="btn-icon addicon"  onClick={handleClick}>
                   <Link to="/products/add-product"><img src={addicon} alt="add product"/></Link>
                 </button>
-            <button className="btn-icon deleteicon"  onClick={handleClick}><img src={deleteicon} alt="delete product"/></button>
             </div>
         </div>
         <table>

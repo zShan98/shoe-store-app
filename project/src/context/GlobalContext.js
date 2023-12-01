@@ -26,9 +26,22 @@ export const GlobalContext = ({children})=>{
         setproducts(productList)
     }
 
+    function UpdateProduct(UpId, newproduct){
+        // productList = productList.filter((product)=> product.id !== delId);
+        console.log(newproduct)
+        const indexva = productList.findIndex((p)=> p.id === newproduct.id)
+                productList[indexva].title = newproduct.title
+                productList[indexva].category = newproduct.category
+                productList[indexva].price = newproduct.price
+                productList[indexva].delivery = newproduct.delivery
+
+        setproducts(productList)
+        console.log(productList)
+    }
+
 return (
 
-    <MyContext.Provider value={{products, addProduct, deleteProduct}}>
+    <MyContext.Provider value={{products, addProduct, deleteProduct, UpdateProduct}}>
         {children}
     </MyContext.Provider>
 )

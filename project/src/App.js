@@ -10,6 +10,7 @@ import { ProductList } from './components/ProductList';
 import { Orders } from './components//Orders';
 import { View_orders } from './components/View_orders';
 import { useState } from 'react';
+import { UpdateProduct } from './components/UpdateProduct';
 
 function App() {
   const [state1, setState1] = useState(false); 
@@ -22,8 +23,9 @@ function App() {
             <Routes>
             <Route path="/" element={<></>}></Route> 
             <Route path="/orders" element={<Orders />}></Route>
-            <Route path="/products" element={<ProductList stateOne={setState1}/>}></Route>
-            <Route path="/products/add-product" element={<AddProduct stateOne={setState1}/>}></Route>
+            <Route path="/products" element={<ProductList/>}></Route>
+            <Route path="/products/add-product" element={<AddProduct/>}></Route>
+            <Route path="/products/update-product" element={<UpdateProduct />}></Route>
           </Routes> 
           </div>
     </GlobalContext>
