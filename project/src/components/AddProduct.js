@@ -18,8 +18,7 @@ const handleForm = (e)=>{
     console.log(e);
     addProduct({id: product.id+1, title: e.target[0].value, description: e.target[1].value, category: e.target[4].value, price: e.target[2].value, delivery: e.target[3].value, img: e.target[5].value});
     console.log({id: product.id+1, title: e.target[0].value, description: e.target[1].value, category: e.target[4].value, price: e.target[2].value, delivery: e.target[3].value, img: e.target[5].value});
-    // resetForm();
-    props.stateOne(false);
+    resetForm();
 }
 
 return(

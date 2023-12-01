@@ -23,7 +23,7 @@ function App() {
             <Route path="/" element={<></>}></Route> 
             <Route path="/orders" element={<Orders />}></Route>
             <Route path="/products" element={<ProductList stateOne={setState1}/>}></Route>
-            <Route path="/add-product" element={<AddProduct stateOne={setState1}/>}></Route>
+            <Route path="/products/add-product" element={<AddProduct stateOne={setState1}/>}></Route>
           </Routes> 
           </div>
     </GlobalContext>
