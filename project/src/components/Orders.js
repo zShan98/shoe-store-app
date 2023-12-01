@@ -18,6 +18,8 @@ export const Orders = () => {
             <th>Items</th>
             <th>Deleivery</th>
           </thead>
+
+          <Order_recipt />
           <Order_recipt />
           <Order_recipt />
           <Order_recipt />
@@ -30,5 +32,3 @@ export const Orders = () => {
     </>
   );
 };
-
-

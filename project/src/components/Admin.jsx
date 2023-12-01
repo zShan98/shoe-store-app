@@ -1,7 +1,7 @@
 import React from "react";
 import Orders_Info from "./Orders_Info";
 
-const Admin = () => {
+export const Admin = () => {
   return (
     <>
       <Orders_Info />
@@ -87,5 +87,3 @@ const Admin = () => {
     </>
   );
 };
-
-export default Admin;

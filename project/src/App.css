@@ -424,14 +424,23 @@ margin: 0px 30px;
   
   .right_content{
     width: 80%;
-    background-color: rgb(107, 102, 102);
+    background-color: rgb(2, 2, 2);
     height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     overflow: hidden;
   }
+
+  /*  View_Orders Component  */
   
+  .order_page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
   
   /* Order receipt component*/
   
@@ -445,21 +454,26 @@ margin: 0px 30px;
   .order_structure{
     background-color: white;
     border-radius: 15px;
-    width: 95%;
+    width: 70%;
+    margin-top: 20px;
+    margin-left: 25%;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
-    height: 60%;
+    min-height: 63vh;
+    max-height: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
     border: 1px solid rgb(181, 179, 179);
-  
+    overflow: hidden;
   }
   
    .order_table{
     background-color: aliceblue;
     width: 95%;
+    margin-bottom: 20px;
     height: auto;
+    margin-left: 0px;
   }
   
   .order_table thead{
@@ -490,6 +504,7 @@ margin: 0px 30px;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    
   }
   
   
@@ -508,9 +523,11 @@ margin: 0px 30px;
   /* Order Info component*/
   
   .summary{
-    margin: 30px auto;
+    width: 70%;
+    height: 15vh;
+    margin-top: 20px;
+    margin-left: 25%;
     border-radius: 10px;
-    width: 95%;
     display: flex;
     align-items:center;
     justify-content: space-evenly;
@@ -520,7 +537,7 @@ margin: 0px 30px;
   
   .flex_div{
     width: 22%;
-    height: 80%;
+    height: 60%;
     text-align: center;
   }
   
