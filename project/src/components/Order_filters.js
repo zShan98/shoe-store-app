@@ -12,11 +12,6 @@ const Order_filters = () => {
           <button>Close</button>
           <button>+</button>
         </div>
-        <div className="right_filters">
-          <button>
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
       </div>
     </>
   );

@@ -11,6 +11,7 @@ import { Admin } from "./components/Admin";
 import { View_orders } from "./components/View_orders";
 import { useState } from "react";
 import { UpdateProduct } from "./components/UpdateProduct";
+import { Customer } from "./components/Customer";
 
 function App() {
   const [state1, setState1] = useState(false);
@@ -29,6 +30,7 @@ function App() {
             path="/products/update-product"
             element={<UpdateProduct />}
           ></Route>
+          <Route path="/customers" element={<Customer />}></Route>
         </Routes>
       </div>
     </GlobalContext>

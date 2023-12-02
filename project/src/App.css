@@ -2,6 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
+button{
+  cursor: pointer;
+}
 
 .Border {
     border: 1px solid black;
@@ -660,4 +663,33 @@ margin: 0px 30px;
     100%{
       width: 100%;
     }
+  }
+
+  .customer_opt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 10px auto;
+  }
+
+  .customer_opt div{
+    width: 25%;
+    text-align: center;
+    padding: 2px;
+    border: 2px solid black;
+    background-color: transparent;
+  }
+
+  .customer_opt button{
+    width: 15%;
+    font-weight: bold;
+    padding: 4px;
+    border: 2px solid black;
+    background-color: transparent;
+  }
+
+  .customer_opt button:hover{
+    background-color: #67676768;
+
   }
