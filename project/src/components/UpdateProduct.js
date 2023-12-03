@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { GetContext } from "../context/GlobalContext";
 // import { Routes, Route, Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 
@@ -39,8 +39,8 @@ const handleForm = (e)=>{
 
 return(
     <div className="addProduct">
-        <form id="update-product-form" onSubmit={handleForm}>
-            <h1 className="product-header">Add Product</h1>
+        <form id="update-product-form">
+            <h1 className="product-header">Update Product</h1>
             <div className="inputbox">
                 <label>Product Title</label>
                 <input type= "text" placeholder="My Product" name="productTitle" {...register("productTitle")} required/>
@@ -78,7 +78,7 @@ return(
                 </div>
             </div>
             <div className="centre">
-                    <button type="submit" className="s-btn">Update Product</button>
+            <Link to="../products"> <button type="submit" className="s-btn" onSubmit={handleForm}>Update Product</button></Link>
             </div>
         </form>
     </div>
