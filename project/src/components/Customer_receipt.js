@@ -13,6 +13,7 @@ const Customer_receipt = (props) => {
             type="checkbox"
             name="status_chk"
             id=""
+            checked={props.selected}
             onChange={handleCheckboxChange}
           />
         </td>

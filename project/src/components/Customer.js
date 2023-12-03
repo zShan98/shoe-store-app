@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export const Customer = () => {
   const [count, setcount] = useState(0);
-  const [isChecked, setIsChecked] = useState(false);
+  const [Checked, setChecked] = useState(false);
 
   function handleCheckboxChange(isChecked) {
     setcount(isChecked ? count + 1 : count - 1);
@@ -15,7 +15,11 @@ export const Customer = () => {
   return (
     <>
       <div className="order_structure">
-        <Customer_options counts={count} />
+        <Customer_options
+          counts={count}
+          selected={setChecked}
+          checked={Checked}
+        />
         <table className="order_table">
           <thead className="table_head">
             <th>Select</th>
@@ -35,6 +39,7 @@ export const Customer = () => {
                 email={item.email}
                 phone={item.phone}
                 onCheckboxChange={handleCheckboxChange}
+                // selected={Checked}
               />
             );
           })}
