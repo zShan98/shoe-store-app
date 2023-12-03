@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: #29b6f6;
+  background-color: rgb(87,81,181);
   font-size: 20px;
   margin-bottom: 50px;
 }
@@ -20,11 +20,11 @@
   margin: 0px 15px;
   font-family: "Roboto", sans-serif;
   letter-spacing: 1.4px;
-  border-top: 2px solid #29b6f6;
+  border-top: 2px solid rgb(87,81,181);
 }
 
 .navbar > a:hover {
-  border-top: 2px solid white;
+  border-bottom: 2px solid white;
 }
 
 @media screen and (max-width: 600px) {

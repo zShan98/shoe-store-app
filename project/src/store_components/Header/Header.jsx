@@ -11,8 +11,7 @@ const Header = () => {
   let value = React.useContext(contexts.ValueContext);
   return (
     <div className="header">
-      <div>Shoes</div>
-
+      <div>onCampus Kicks</div>
       <nav>
         <li>
           <PersonIcon className="person" />
@@ -20,9 +19,8 @@ const Header = () => {
         <li>
           <FavoriteIcon className="heart" />
         </li>
-
         <li>
-          <Badge badgeContent={value.state} showZero color="primary">
+          <Badge badgeContent={value.state} showZero color="white">
             <ShoppingCartIcon className="cart" />
           </Badge>
         </li>

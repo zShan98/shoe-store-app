@@ -1,19 +1,16 @@
 import React from "react";
-
 import Navbar from "../Navbar/navbar";
 import Header from "../Header/Header";
 import Footer from "../Footer/footer";
-
+import "./Shop.css"
 import { Outlet } from "react-router-dom";
 
 const Shop = () => {
   return (
-    <div>
+    <div className="Shop-page">
       <Header />
       <Navbar />
-
       <Outlet />
-
       <Footer />
     </div>
   );

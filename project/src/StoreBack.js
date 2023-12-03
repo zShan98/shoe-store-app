@@ -9,13 +9,11 @@ import { GlobalContext } from "./context/GlobalContext";
 import { ProductList } from "./components/ProductList";
 import { Admin } from "./components/Admin";
 import { View_orders } from "./components/View_orders";
-import { useState } from "react";
 import { UpdateProduct } from "./components/UpdateProduct";
 import { Customer } from "./components/Customer";
 
 
 export const StoreBack = ()=> {
-  const [state1, setState1] = useState(false);
 
   return (
     <GlobalContext>

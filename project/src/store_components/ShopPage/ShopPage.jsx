@@ -1,9 +1,7 @@
 import React from "react";
 import "./ShopPage.css";
-
 // import contexts from "../context/ValueContext";
 import shoes from "../../shoes";
-
 import Item from "../Items/items";
 
 const ShopPage = () => {

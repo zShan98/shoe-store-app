@@ -14,8 +14,9 @@ const Footer = () => {
       <NewsLetter />
       <div className="big">
         <div className="logoName">
-          <h3>Shoes</h3>
-          <p>Make your Shoes Bright</p>
+          <h5>onCampus Kicks</h5>
+          <br />
+          <p>your personal brand</p>
         </div>
         <Boxes
           title="Products"
@@ -47,16 +48,16 @@ const Footer = () => {
           icons={[<LocationOnIcon />, <PhoneIcon />, <EmailIcon />]}
         />
       </div>
-      <div className="small">
-        <p>Copyright &copy; Shoes 2020</p>
+      {/* <div className="small">
+        <p>Copyright &copy; Shoes 2023</p>
         <p>
-          Made with{" "}
+          Powered by{" "}
           <span role="img" aria-labelledby="heart">
-            ❤️
+          ⚡
           </span>{" "}
-          by Hina
+          onCampus Kicks
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

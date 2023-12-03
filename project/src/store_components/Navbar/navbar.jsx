@@ -15,7 +15,6 @@ const Navbar = ({ name }) => {
         }}
         className="bars"
       />
-
       <Link
         onClick={() => setShow(false)}
         to="/"

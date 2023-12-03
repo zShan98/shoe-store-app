@@ -1,18 +1,18 @@
 .news {
   display: flex;
-  background-color: #29b6f6;
+  background-color: rgb(87,81,181);
   justify-content: space-around;
   align-items: center;
 }
 
 .email {
   font-size: 2.2em;
-  color: blue;
+  color: white;
 }
 
 .email > svg {
   transform: scale(1.8);
-  fill: blue;
+  fill: white;
 }
 
 .submit {
@@ -42,7 +42,7 @@
 
 .submit > button:hover {
   background-color: white;
-  color: #0c10e9;
+  color: rgb(192,17,126);
 }
 
 @media screen and (max-width: 600px) {

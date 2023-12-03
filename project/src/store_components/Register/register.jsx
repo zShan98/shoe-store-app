@@ -19,9 +19,9 @@ const Register = () => {
       {show ? <p className="alert">Successfully Registered.</p> : null}
       <h1>Register</h1>
 
-      <img className="blob1" src={Blob1} alt="blob" />
+      {/* <img className="blob1" src={Blob1} alt="blob" />   */}
 
-      <img className="blob2" src={Blob2} alt="blob" />
+      {/* <img className="blob2" src={Blob2} alt="blob" /> */}
       <label for="email">Email</label>
       <input type="email" placeholder="Enter Email" />
 
@@ -31,7 +31,7 @@ const Register = () => {
       <label for="password">Confirm Password</label>
       <input type="password" placeholder="Confirm the password" />
 
-      <input onClick={showing} type="submit" value="Submit" />
+      <input onClick={showing} type="submit" value="Submit" id="my-btn"/>
     </div>
   );
 };
