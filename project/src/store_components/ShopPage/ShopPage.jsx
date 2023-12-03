@@ -1,21 +1,17 @@
 import React from "react";
 import "./ShopPage.css";
+import img from "../../assets/ProductImages/2.png";
 
 // import contexts from "../context/ValueContext";
-import shoes from "../../shoes";
+import main from "../../main.json";
 
 import Item from "../Items/items";
 
 const ShopPage = () => {
   return (
     <div className="ShopPage">
-      {Object.keys(shoes).map((shoe) => (
-        <Item
-          key={shoe}
-          id={shoe}
-          name={shoes[shoe].name}
-          img={shoes[shoe].img}
-        />
+      {main.products.productList.map((shoe) => (
+        <Item key={shoe} id={shoe.id} name={shoe.title} img={img} />
       ))}
     </div>
   );

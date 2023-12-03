@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
-import product1 from "../assets/ProductImages/2.png";
 import main from "../main.json";
+import img from "../assets/ProductImages/2.png";
 
 const MyContext = createContext(main.products.productList);
 
