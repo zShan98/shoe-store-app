@@ -2,15 +2,17 @@ import "./App.css";
 import { StoreFront } from "./StoreFront";
 import { StoreBack } from "./StoreBack";
 import { Loginsignup } from "./components/login/Loginsignup";
+import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <Loginsignup />
-    //   <Routes>
-    //         <Route path="/store-back" element={<StoreBack />}></Route>
-    //         <Route path="/store-front" element={<StoreFront />}></Route>
-
-    //       </Routes>
+    <>
+      <Routes>
+          {/* <Route path="" element={<Loginsignup />}></Route> */}
+            <Route path="" element= {< StoreBack />}></Route>
+            {/* <Route path="/" element={<StoreFront />}></Route> */}
+      </Routes>
+    </>
   );
 }
 

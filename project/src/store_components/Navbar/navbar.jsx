@@ -24,21 +24,21 @@ const Navbar = ({ name }) => {
       </Link>
       <Link
         onClick={() => setShow(false)}
-        to="/shop/products"
+        to="shop/products"
         className={`${show ? "show" : "hide"}`}
       >
         Shop
       </Link>
       <Link
         onClick={() => setShow(false)}
-        to="/shop/register"
+        to="/register"
         className={`${show ? "show" : "hide"}`}
       >
         Register
       </Link>
       <Link
         onClick={() => setShow(false)}
-        to="/shop/contact"
+        to="/contact"
         className={`${show ? "show" : "hide"}`}
       >
         Contact Us

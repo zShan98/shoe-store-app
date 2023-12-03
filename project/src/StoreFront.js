@@ -20,14 +20,13 @@ export const StoreFront = ()=> {
       <contexts.ValueContext.Provider value={{ state, dispatch }}>
         <div className="App">
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="shop" element={<Shop />}>
-              <Route path="products" element={<ShopPage />}></Route>
-
-              <Route path="product/:productId" element={<Preview />} />
+            <Route path="/shop" element={<Shop />}>
+              <Route path="shop/products" element={<ShopPage />}></Route>
+              <Route path="shop/product/:productId" element={<Preview />} />
               <Route path="register" element={<Register />}></Route>
               <Route path="contact" element={<Contact />}></Route>
             </Route>
+            <Route path="" element={<Home />}></Route>
           </Routes>
         </div>
       </contexts.ValueContext.Provider>
