@@ -81,9 +81,9 @@ The design strategy focuses on a responsive and aesthetically pleasing user inte
 (Include detailed schema and relationships)
 # 9. APPLICATION DESIGN
 *	User Interface: Responsive web design
-*	Frontend: HTML, CSS, JavaScript
+*	Frontend: React JS
 *	Backend: Node.js, Express.js
-(Include other relevant details)
+* DataBase: MySQL
 # 10. REFERENCES
 List any external documents or resources referenced during the development.
 # 11. APPENDICES
