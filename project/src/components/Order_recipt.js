@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import orders from "../orders.json";
 
 const Order_recipt = (props) => {
   const [isChecked, setIsChecked] = useState(false);

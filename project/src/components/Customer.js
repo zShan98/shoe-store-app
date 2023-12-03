@@ -1,6 +1,6 @@
 import React from "react";
 import Customer_receipt from "./Customer_receipt";
-import customer from "../customer.json";
+import main from "../main.json";
 import Customer_options from "./Customer_options";
 import { useState } from "react";
 
@@ -30,7 +30,7 @@ export const Customer = () => {
             <th>Phone</th>
           </thead>
 
-          {customer.receipts.map((item) => {
+          {main.customers.receipts.map((item) => {
             return (
               <Customer_receipt
                 customer_id={item.customer_id}

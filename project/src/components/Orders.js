@@ -1,7 +1,7 @@
 import React from "react";
 import Order_recipt from "./Order_recipt";
 import Order_filters from "./Order_filters";
-import orders from "../orders.json";
+import main from "../main.json";
 
 export const Orders = () => {
   return (
@@ -21,7 +21,7 @@ export const Orders = () => {
             <th>Delivered</th>
           </thead>
 
-          {orders.receipts.map((item) => {
+          {main.orders.receipts.map((item) => {
             return (
               <Order_recipt
                 order_id={item.order_id}
