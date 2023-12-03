@@ -55,9 +55,9 @@ The system will communicate with users via email for order confirmations and upd
 ### 4.2.1. User Authentication
 •	Description: Users can create accounts or log in.
 •	Actors: Registered Users
-•	Preconditions: User has an active internet connection.
+•	Preconditions: The user has an active internet connection.
 •	Postconditions: User gains access to personalized features.
-(Include similar sections for other use cases)
+
 # 5. NON-FUNCTIONAL REQUIREMENTS
 ## 5.1. Performance Requirements
 *	The website shall load within 3 seconds on a standard internet connection.
@@ -77,15 +77,15 @@ The design strategy focuses on a responsive and aesthetically pleasing user inte
 # 8. DETAILED SYSTEM DESIGN
 ## 8.1. DATABASE DESIGN
 *	Database management system: MySQL
-*	Tables: Users, Products, Orders
-(Include detailed schema and relationships)
+*	Tables: Customer, Seller, Payment, Discount, Products, Order
+
 # 9. APPLICATION DESIGN
 *	User Interface: Responsive web design
 *	Frontend: React JS
 *	Backend: Node.js, Express.js
-* DataBase: MySQL
+* Database: MySQL
 # 10. REFERENCES
-List any external documents or resources referenced during the development.
+We took Reference from NDURE Shoes as an inspiration and then focused on a specific audience area, i.e., Students.
 # 11. APPENDICES
 Include any additional information, diagrams, or supporting documents.
 This SRS/SDS document provides a comprehensive overview of the Campus Kicks project, outlining its purpose, scope, requirements, and design aspects.
