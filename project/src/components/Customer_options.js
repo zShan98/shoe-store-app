@@ -5,6 +5,7 @@ const Customer_options = (props) => {
     <>
       <div className="customer_opt">
         <div>{props.counts} Customers Selected</div>
+        <button>Select All</button>
         <button>Export</button>
       </div>
     </>
