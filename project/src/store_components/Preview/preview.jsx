@@ -1,5 +1,7 @@
 import React from "react";
 import "./preview.css";
+import main from "../../main.json";
+import img1 from "../../assets/ProductImages/2.png";
 
 import { useParams } from "react-router-dom";
 
@@ -30,10 +32,10 @@ const Preview = () => {
   return (
     <div className="preview">
       <div className="bigImage">
-        <img src={img} alt="shoes" />
+        <img src={img1} alt="shoes" />
       </div>
       <div className="descriptions">
-        <h3>{name}</h3>
+        <h3>{main.products.productList[productId].title}</h3>
         <p>
           Full canvas double sided print with rounded toe construction, Lace-up
           closure for a snug fit, Soft textile lining with lightweight
@@ -47,7 +49,7 @@ const Preview = () => {
           <div className="brown"></div>
         </div>
         <div className="priceRatings">
-          <p>Price : $34.90</p>
+          <p>{main.products.productList[productId].price}</p>
           <p className="ratings">
             {array.map((icon) => {
               return icon;
