@@ -5,8 +5,8 @@
 }
 
 .item {
-  border: 2px solid #0099ff;
-  box-shadow: 2px 2px 4px #00c3fff6;
+  border: 2px solid rgb(38, 38, 38);
+  box-shadow: 2px 2px 4px ;
   border-radius: 5px;
   width: 400px;
   height: 400px;
@@ -31,7 +31,7 @@
   width: 100%;
   border-radius: 5px;
   color: white;
-  background-color: #0099ff;
+  background-color: rgb(38, 38, 38);
   border: 1px solid rgb(0, 238, 255);
   box-shadow: 2px 2px 3px grey;
   /* border: none; */

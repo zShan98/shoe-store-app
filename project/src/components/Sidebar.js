@@ -22,25 +22,25 @@ export const Sidebar = (props) => {
     <div className="sidebar">
       <ul>
         <li className="listitem Border">
-          <Link to="/" className="nav-item">
+          <Link to="" className="nav-item">
             <img src={props.image} alt="icon" />
             {list[0]}
           </Link>
         </li>
         <li className="listitem Border">
-          <Link to="/orders" className="nav-item">
+          <Link to="orders" className="nav-item">
             <img src={props.image} alt="icon" />
             {list[1]}
           </Link>
         </li>
         <li className="listitem Border">
-          <Link to="/products" className="nav-item">
+          <Link to="products" className="nav-item">
             <img src={props.image} alt="icon" />
             {list[2]}
           </Link>
         </li>
         <li className="listitem Border">
-          <Link to="/customers" className="nav-item">
+          <Link to="customers" className="nav-item">
             <img src={props.image} alt="icon" />
             {list[3]}
           </Link>

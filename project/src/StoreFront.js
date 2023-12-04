@@ -10,7 +10,7 @@ import Shop from "./store_components/Shop/shop";
 import { Routes, Route } from "react-router-dom";
 import Preview from "./store_components/Preview/preview";
 
-export const StoreFront = ()=> {
+export const StoreFront = () => {
   let [state, dispatch] = React.useReducer(
     numberReducer,
     React.useContext(contexts.ValueContext)
@@ -20,17 +20,16 @@ export const StoreFront = ()=> {
       <contexts.ValueContext.Provider value={{ state, dispatch }}>
         <div className="App">
           <Routes>
-            <Route path="/shop" element={<Shop />}>
-              <Route path="shop/products" element={<ShopPage />}></Route>
-              <Route path="shop/product/:productId" element={<Preview />} />
+            <Route path="/" element={<Home />}></Route>
+            <Route path="shop" element={<Shop />}>
+              <Route path="products" element={<ShopPage />}></Route>
+              <Route path="product/:productId" element={<Preview />}></Route>
               <Route path="register" element={<Register />}></Route>
               <Route path="contact" element={<Contact />}></Route>
             </Route>
-            <Route path="" element={<Home />}></Route>
           </Routes>
         </div>
       </contexts.ValueContext.Provider>
     </div>
   );
-}
-
+};

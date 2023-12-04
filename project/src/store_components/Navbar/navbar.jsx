@@ -8,7 +8,8 @@ const Navbar = ({ name }) => {
   let [show, setShow] = React.useState(false);
 
   return (
-    <div className={`navbar ${name ? name : ""}`}>
+    <div id="navbar">
+      {/* {`navbar ${name ? name : ""}`} */}
       <ViewHeadlineIcon
         onClick={() => {
           setShow(!show);
@@ -24,21 +25,21 @@ const Navbar = ({ name }) => {
       </Link>
       <Link
         onClick={() => setShow(false)}
-        to="shop/products"
+        to={name === "shop" ? "products" : "shop/products"}
         className={`${show ? "show" : "hide"}`}
       >
         Shop
       </Link>
       <Link
         onClick={() => setShow(false)}
-        to="/register"
+        to={name === "shop" ? "register" : "shop/register"}
         className={`${show ? "show" : "hide"}`}
       >
         Register
       </Link>
       <Link
         onClick={() => setShow(false)}
-        to="/contact"
+        to={name === "shop" ? "contact" : "shop/contact"}
         className={`${show ? "show" : "hide"}`}
       >
         Contact Us

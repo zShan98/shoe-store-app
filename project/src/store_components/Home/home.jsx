@@ -23,7 +23,7 @@ const Home = () => {
           Quality is our top-priority. Here, you can get both big and small
           shoes with best services. We deal with all famous brands of shoes. The
           quality of our brands is totally verified.
-          <br /> 
+          <br />
         </p>
 
         <button onClick={() => navigate("/shop/products")}>Shop Now</button>

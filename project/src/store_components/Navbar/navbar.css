@@ -1,4 +1,4 @@
-.navbar {
+#navbar {
   display: flex;
   justify-content: center;
   background-color: rgb(87,81,181);
@@ -11,10 +11,9 @@
   padding: 10px 30px;
 }
 
-.navbar > a {
+#navbar > a {
   color: white;
   font-weight: bold;
-  text-shadow: 2px 2px 4px #000000;
   text-decoration: none;
   padding: 10px 15px;
   margin: 0px 15px;
@@ -23,12 +22,12 @@
   border-top: 2px solid rgb(87,81,181);
 }
 
-.navbar > a:hover {
+#navbar > a:hover {
   border-bottom: 2px solid white;
 }
 
 @media screen and (max-width: 600px) {
-  .navbar {
+  #navbar {
     flex-direction: column;
   }
 
