@@ -77,7 +77,13 @@ The design strategy focuses on a responsive and aesthetically pleasing user inte
 # 8. DETAILED SYSTEM DESIGN
 ## 8.1. DATABASE DESIGN
 *	Database management system: MySQL
-*	Tables: Customer, Seller, Payment, Discount, Products, Order
+*	Tables: 
+    *Customer=>C_ID,C_Email
+    *Seller=>S_ID
+    *Payment=>Pay_ID
+    *Discount=>D_ID
+    *Products=>P_ID
+    *Order=>O_ID
 
 # 9. APPLICATION DESIGN
 *	User Interface: Responsive web design
