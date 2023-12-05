@@ -25,21 +25,33 @@ const Navbar = ({ name }) => {
       </Link>
       <Link
         onClick={() => setShow(false)}
+<<<<<<< Updated upstream
         to={name === "shop" ? "products" : "shop/products"}
+=======
+        to="/shop/products"
+>>>>>>> Stashed changes
         className={`${show ? "show" : "hide"}`}
       >
         Shop
       </Link>
       <Link
         onClick={() => setShow(false)}
+<<<<<<< Updated upstream
         to={name === "shop" ? "register" : "shop/register"}
+=======
+        to="/shop/register"
+>>>>>>> Stashed changes
         className={`${show ? "show" : "hide"}`}
       >
         Register
       </Link>
       <Link
         onClick={() => setShow(false)}
+<<<<<<< Updated upstream
         to={name === "shop" ? "contact" : "shop/contact"}
+=======
+        to="/shop/contact"
+>>>>>>> Stashed changes
         className={`${show ? "show" : "hide"}`}
       >
         Contact Us

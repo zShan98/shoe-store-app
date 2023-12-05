@@ -23,7 +23,12 @@ export const StoreFront = () => {
             <Route path="/" element={<Home />}></Route>
             <Route path="shop" element={<Shop />}>
               <Route path="products" element={<ShopPage />}></Route>
+<<<<<<< Updated upstream
               <Route path="product/:productId" element={<Preview />}></Route>
+=======
+
+              <Route path="product/:productId" element={<Preview />} />
+>>>>>>> Stashed changes
               <Route path="register" element={<Register />}></Route>
               <Route path="contact" element={<Contact />}></Route>
             </Route>
