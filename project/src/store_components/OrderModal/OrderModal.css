@@ -1,0 +1,37 @@
+.modal-screen {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100vw;
+    background-color: rgba(53, 53, 53, 0.85);
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.modal-container {
+/* flex: 1; */
+height: 80%;
+width: 50%;
+background-color: aliceblue;
+border-radius: 4%;
+border: 1px solid rgb(57, 56, 56);
+box-shadow: 3px 3px 5px 15px rgb(62, 1, 62);
+}
+
+.modal-header {
+    border: 1px dashed black;
+}
+
+.modal-main {
+    border: 1px dashed black;
+
+}
+
+.modal-footer {
+    border: 1px dashed black;
+
+}

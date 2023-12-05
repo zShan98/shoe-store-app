@@ -12,10 +12,11 @@ const Home = () => {
   let navigate = useNavigate();
   return (
     <div className="home">
+      <Navbar name="homeNavbar" />
       <div className="homePage">
         <img src={MainPageImages} alt="Shoes" />
       </div>
-      <Navbar name="homeNavbar" />
+
       <div className="overlayText">
         <h1>All Shoes are available !</h1>
         <h3>Summer Collection 2023</h3>

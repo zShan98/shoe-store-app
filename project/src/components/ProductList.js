@@ -26,7 +26,7 @@ export const ProductList = (props) => {
     return (
       <>
         <tr className="">
-          <Link to={`/products/update-product`} state={{ Data: item }}>
+          <Link to={`update-product`} state={{ Data: item }}>
             <td>{item.title}</td>
           </Link>
           <td>{item.description}</td>
@@ -50,7 +50,7 @@ export const ProductList = (props) => {
         <h1>All Products</h1>
         <div className="flex-below flex-container">
           <button className="btn-icon addicon" onClick={handleClick}>
-            <Link to="/products/add-product">
+            <Link to="add-product">
               <img src={addicon} alt="add product" />
             </Link>
           </button>
