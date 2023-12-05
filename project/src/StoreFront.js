@@ -12,10 +12,16 @@ import Preview from "./store_components/Preview/preview";
 
 export const StoreFront = () => {
   const [count, setcount] = useState(0);
+  const [pid, setpid] = useState(0);
+
   let [state, dispatch] = React.useReducer(
     numberReducer,
     React.useContext(contexts.ValueContext)
   );
+
+  const handlepid = (p) => {
+    setpid(p);
+  };
 
   function handlecount(isChecked) {
     setcount(isChecked ? count + 1 : count - 1);
@@ -27,11 +33,14 @@ export const StoreFront = () => {
         <div className="App">
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="shop" element={<Shop count={count} />}>
-              <Route path="products" element={<ShopPage />}></Route>
+            <Route path="shop" element={<Shop count={count} pid={pid} />}>
+              <Route
+                path="products"
+                element={<ShopPage handlecount={handlecount} />}
+              ></Route>
               <Route
                 path="product/:productId"
-                element={<Preview handlecount={handlecount} />}
+                element={<Preview handlecount={handlecount} pid={handlepid} />}
               ></Route>
               <Route path="register" element={<Register />}></Route>
               <Route path="contact" element={<Contact />}></Route>

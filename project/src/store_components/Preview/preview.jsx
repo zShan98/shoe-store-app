@@ -11,7 +11,7 @@ import contexts from "../context/ValueContext";
 import shoes from "../../shoes";
 import StarRateIcon from "@mui/icons-material/StarRate";
 
-const Preview = () => {
+const Preview = (props) => {
   const { productId } = useParams();
 
   let value = React.useContext(contexts.ValueContext);
@@ -34,6 +34,14 @@ const Preview = () => {
 
   const handlechkorder = () => {
     setchkorder(!chkorder);
+  };
+
+  const handleClick = (bool) => {
+    props.handlecount(bool);
+  };
+
+  const handlepid = (p) => {
+    props.pid(p);
   };
 
   return (
@@ -68,6 +76,8 @@ const Preview = () => {
                 });
 
                 setAdd(!add);
+                handleClick(true);
+                handlepid(productId);
               }}
             >
               Add to Cart
@@ -79,6 +89,7 @@ const Preview = () => {
                   type: "DECREMENT",
                 });
                 setAdd(!add);
+                handleClick(false);
               }}
             >
               Remove from Cart

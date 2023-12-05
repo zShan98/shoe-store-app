@@ -9,11 +9,17 @@ import main from "../../main.json";
 
 import Item from "../Items/items";
 
-const ShopPage = () => {
+const ShopPage = (props) => {
   return (
     <div className="ShopPage">
       {main.products.productList.map((shoe) => (
-        <Item key={shoe} id={shoe.id} name={shoe.title} img={img} />
+        <Item
+          key={shoe}
+          id={shoe.id}
+          name={shoe.title}
+          img={img}
+          handlecount={props.handlecount}
+        />
       ))}
     </div>
   );

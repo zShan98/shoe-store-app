@@ -27,25 +27,20 @@ const Cart = (props) => {
                 </tr>
               </thead>
               <tbody>
-                {main.cart.receipts.map((shoe) => {
-                  // useEffect(() => {
-                  //   setcount((count) => count + 1);
-                  // }, []);
-
-                  // useEffect(() => {
-                  //   settotal((total) => total + 1);
-                  // }, []);
-
-                  return (
-                    <Table
-                      key={shoe}
-                      id={shoe.id}
-                      name={shoe.title}
-                      img={shoe.img}
-                      price={shoe.price}
-                    />
-                  );
-                })}
+                {
+                  // main.cart.receipts.push(main.products.productList[props.pid]);
+                  main.cart.receipts.map((shoe) => {
+                    return (
+                      <Table
+                        key={shoe}
+                        id={shoe.id}
+                        name={shoe.title}
+                        img={shoe.img}
+                        price={shoe.price}
+                      />
+                    );
+                  })
+                }
               </tbody>
             </table>
 

@@ -21,7 +21,7 @@ const Shop = (props) => {
         <Outlet />
         <Footer />
       </div>
-      {clicked ? <Cart handleClick={handleClick} /> : ""}
+      {clicked ? <Cart handleClick={handleClick} pid={props.pid} /> : ""}
     </>
   );
 };
