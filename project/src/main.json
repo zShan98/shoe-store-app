@@ -154,6 +154,14 @@
         "phone": "03332316744",
         "password": "jamal123"
 
+    },
+
+    "cart":{
+
+        "receipts":[{"id": 0, "title": "'Product 1'", "description": "'Product 1'", "category": "other", "price": 1800, "delivery": 100, "img": "../assets/ProductImages/2.png"}]
+
+        
     }
+
 
 }

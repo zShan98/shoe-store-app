@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./preview.css";
 import main from "../../main.json";
 import img1 from "../../assets/ProductImages/2.png";
@@ -30,6 +30,12 @@ const Preview = () => {
 
   console.log(array);
 
+  const [chkorder, setchkorder] = useState(false);
+
+  const handlechkorder = () => {
+    setchkorder(!chkorder);
+  };
+
   return (
     <>
       <div className="preview">
@@ -38,12 +44,7 @@ const Preview = () => {
         </div>
         <div className="descriptions">
           <h3>{main.products.productList[productId].title}</h3>
-          <p>
-            Full canvas double sided print with rounded toe construction,
-            Lace-up closure for a snug fit, Soft textile lining with lightweight
-            construction for maximum comfort, High-quality EVA outsole for
-            traction and exceptional durability.
-          </p>
+          <p>{main.products.productList[productId].description}</p>
           <div className="colors">
             <div className="red"></div>
             <div className="green"></div>
@@ -84,10 +85,17 @@ const Preview = () => {
             </button>
           )}
           <br />
-          <button>Order Now</button>
+          <button onClick={handlechkorder}>Order Now</button>
         </div>
       </div>
-      <OrderModal prodData={main.products.productList[productId]} />
+      {chkorder ? (
+        <OrderModal
+          handleClick={handlechkorder}
+          prodData={main.products.productList[productId]}
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 };

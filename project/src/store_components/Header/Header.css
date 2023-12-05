@@ -42,8 +42,28 @@ li {
   color: lightgray;
 }
 
-.cart:hover {
+.cart-badge:hover {
   color: rgb(28, 255, 244);
+}
+
+.cart-btn{
+  border: transparent;
+  background-color: transparent;
+  color: white;
+}
+
+.cart-btn span{
+  
+  margin-left: 4px;
+  color: white;
+  background-color: grey;
+  padding: 4px;
+  font-size: 15px;
+  border-radius: 50%;
+  position: relative;
+  left: -4px;
+  top: 10px;
+  
 }
 
 .heart:hover {

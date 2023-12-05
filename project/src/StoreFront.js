@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./StoreFront.css";
 import contexts from "./store_components/context/ValueContext";
 import numberReducer from "./store_components/context/Reducer";
@@ -11,19 +11,28 @@ import { Routes, Route } from "react-router-dom";
 import Preview from "./store_components/Preview/preview";
 
 export const StoreFront = () => {
+  const [count, setcount] = useState(0);
   let [state, dispatch] = React.useReducer(
     numberReducer,
     React.useContext(contexts.ValueContext)
   );
+
+  function handlecount(isChecked) {
+    setcount(isChecked ? count + 1 : count - 1);
+  }
+
   return (
     <div>
       <contexts.ValueContext.Provider value={{ state, dispatch }}>
         <div className="App">
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="shop" element={<Shop />}>
+            <Route path="shop" element={<Shop count={count} />}>
               <Route path="products" element={<ShopPage />}></Route>
-              <Route path="product/:productId" element={<Preview />}></Route>
+              <Route
+                path="product/:productId"
+                element={<Preview handlecount={handlecount} />}
+              ></Route>
               <Route path="register" element={<Register />}></Route>
               <Route path="contact" element={<Contact />}></Route>
             </Route>
