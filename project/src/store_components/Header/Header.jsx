@@ -12,8 +12,8 @@ const Header = (props) => {
 
   return (
     <>
-      <div className="header">
-        <div>onCampus Kicks</div>
+      <div id="header">
+        <div className="hlogo">onCampus Kicks</div>
         <nav>
           <li>
             <PersonIcon className="person" />

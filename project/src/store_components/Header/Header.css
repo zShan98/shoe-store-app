@@ -5,23 +5,27 @@
   margin: 0px;
   padding: 0px;
 }
-.header {
+#header {
   padding: 15px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: rgb(38, 38, 38);
   color: white;
   font-weight: 700;
   font-size: 24px;
   letter-spacing: 1.2px;
   align-items: center;
+  
+}
+.hlogo{
+  width: 45%;
 }
 
 svg {
   transform: scale(1.5);
 }
 
-.header > div {
+#header > div {
   font-family: "Great Vibes", cursive;
   letter-spacing: 2px;
   font-weight: 400;
