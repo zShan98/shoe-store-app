@@ -3,10 +3,19 @@ import "./Cart.css";
 import Table from "../Table/Table";
 import main from "../../main.json";
 import { useEffect } from "react";
+import { OrderModal } from "../OrderModal/OrderModal";
+import { Loginsignup } from "../../components/login/Loginsignup";
+import { Signup } from "../../components/signup/signup";
 
 const Cart = (props) => {
   const [total, settotal] = useState(0);
   const [count, setcount] = useState(0);
+  const [click, setclick] = useState(false);
+
+  const handleclick = (bool)=>{
+    setclick(bool);
+  }
+
 
   return (
     <>
@@ -54,10 +63,11 @@ const Cart = (props) => {
             </table>
           </div>
           <div className="cart-footer">
-            <button>Confirm Cart</button>
+            <button onClick={handleclick}>Confirm Cart</button>
           </div>
         </div>
       </div>
+      {click ? <Loginsignup /> : <Signup/>}
     </>
   );
 };

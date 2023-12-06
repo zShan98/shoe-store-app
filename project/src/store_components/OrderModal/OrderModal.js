@@ -1,19 +1,29 @@
 import React from "react";
 import "./OrderModal.css";
+import { useState } from "react";
+import Table from "../Table/Table";
+import main from "../../main.json"
+
+
 export const OrderModal = (props) => {
   console.log(props.prodData);
+
+
+  const [total, settotal] = useState(0);
+  const [count, setcount] = useState(0);
+    
+
   return (
-    <div className="modal-screen">
-      <div className="modal-container">
-        <div className="modal-header">
-          <button onClick={props.handleClick}>X</button>
-          <h1>{props.prodData.title}</h1>
-          <h3>{props.prodData.description}</h3>
-          <h5>Price: $ {props.prodData.price}</h5>
+    <>
+      <div className="cart-screen">
+        <div className="cart-container">
+          <div className="cart-header">
+          <div className="modal-main">
+            Order Placed Successfully
+          </div>
+          </div>
         </div>
-        <div className="modal-main"></div>
-        <div className="modal-footer"></div>
       </div>
-    </div>
+    </>
   );
 };

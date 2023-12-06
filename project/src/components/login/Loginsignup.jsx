@@ -8,7 +8,7 @@ import user_icon from "../../assets/images/person.png";
 import email_icon from "../../assets/images/email.png";
 import password_icon from "../../assets/images/password.png";
 
-export const Loginsignup = (props) => {
+export const Loginsignup = (props) => {             
   const [action, setAction] = useState("Login");
   const nav = useNavigate();
   const login_handler = (e) => {
