@@ -14,13 +14,19 @@ const db = mysql.createConnection({
 });
 
 app.get("/", (req, res) => {
-  const sql = "SELECT * FROM Orders";
-  db.query(sql, (err, data) => {
-    if (err) return res.json("Error");
-    return res.json(data);
-  });
-  //res.json("Hello from Backend");
+  // const sql = "SELECT * FROM Orders";
+  // db.query(sql, (err, data) => {
+  //   if (err) return res.json("Error");
+  //   return res.json(data);
+  // });
+  res.json("Hello from Backend");
 });
+
+
+
+
+
+
 // app.post('/create', (req,res)=> {
 //     const sql = "INSERT INTO contact (`Name`, `Email` ,`Subject` , `Message`) VALUES (?)";
 //     const values = [
@@ -56,23 +62,23 @@ app.get("/", (req, res) => {
 //     console.log(result);
 //     res.send("Seller Table Created");
 //   });
-// });
+//  });
 //customer
-// app.get("/create", (res, req) => {
-//   let sql = `CREATE TABLE IF NOT EXISTS Customer(
-//         cid varchar(10),
-//         Fname varchar(10),
-//         Lname varchar(10),
-//         email varchar(20),
-//         address varchar(50),
-//         phone int(12),
-//         sid varchar(10))`;
-//   db.query(sql, (err, result) => {
-//     if (err) throw err;
-//     console.log(result);
-//     res.send("Customer Table Created");
-//   });
-// });
+app.get("/create", (res, req) => {
+  let sql = `CREATE TABLE IF NOT EXISTS Customer(
+        cid varchar(10),
+        Fname varchar(10),
+        Lname varchar(10),
+        email varchar(20),
+        address varchar(50),
+        phone int(12),
+        sid varchar(10))`;
+  db.query(sql, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.send("Customer Table Created");
+  });
+});
 
 //product
 // app.get("/create", (res, req) => {
@@ -98,7 +104,19 @@ app.get("/", (req, res) => {
 //   db.query(sql, (err, result) => {
 //     if (err) throw err;
 //     console.log(result);
-//     console.log("Product Table Created");
+//     console.log("Order Table Created");
+//   });
+// });
+
+// app.get("/create", (res, req) => {
+//   let sql = `CREATE TABLE IF NOT EXISTS CustomerHelp (
+//             cid varchar(11),
+//             subject Text,
+//             message Text)`;
+//   db.query(sql, (err, result) => {
+//     if (err) throw err;
+//     console.log(result);
+//     console.log("CustomerHelp Table Created");
 //   });
 // });
 
