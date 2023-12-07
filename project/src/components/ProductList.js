@@ -13,7 +13,7 @@ export const ProductList = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8085/") // Adjust the URL if needed
+      .get("http://localhost:8085/product_read") // Adjust the URL if needed
       .then((res) => setpproducts(res.data))
       .catch((err) => console.log(err));
   }, []);

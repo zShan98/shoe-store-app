@@ -6,6 +6,8 @@ app.use(express.json());
 
 app.use(cors());
 
+// ---------------------------------------- DB Connection ------------------------------------
+
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -13,7 +15,40 @@ const db = mysql.createConnection({
   database: "on_campus_kicks",
 });
 
-app.get("/", (req, res) => {
+// ---------------------------------------- DB Creation ------------------------------------
+
+// app.get("/db_create", (req, res) => {
+//   let sql = "CREATE DATABASE On_Campus_Kicks";
+
+//   db.query(sql, (err, result) => {
+//     if (err) throw err;
+//     console.log(result);
+//     res.send("Database Created");
+//   });
+// });
+
+// ---------------------------------------- Orders CRUD ------------------------------------
+
+app.post("/order_add", (req, res) => {
+  // const { cid, Delivery, price, O_status, O_Timedate } = req.body;
+
+  const sql = `
+    INSERT INTO orders (cid, delivery, price, O_status, O_Timedate) VALUES (?)`;
+
+  const values = [
+    req.body.cid,
+    req.body.delivery,
+    req.body.price,
+    req.body.O_status,
+    req.body.O_Timedate,
+  ];
+  db.query(sql, [values], (err, date) => {
+    if (err) return res.json("ERROR");
+    return res.json(data);
+  });
+});
+
+app.get("/order_read", (req, res) => {
   const sql = "SELECT * FROM Orders";
   db.query(sql, (err, data) => {
     if (err) return res.json("Error");
@@ -22,86 +57,30 @@ app.get("/", (req, res) => {
   //res.json("Hello from Backend");
 });
 
-// app.post('/create', (req,res)=> {
-//     const sql = "INSERT INTO contact (`Name`, `Email` ,`Subject` , `Message`) VALUES (?)";
-//     const values = [
-//         req.body.name,
-//         req.body.email,
-//         req.body.subject,
-//         req.body.message
-//     ]
-//     db.query(sql,[values], (err, data) =>{
-//         if(err) return res.json("Error");
-//         return res.json(data);
-//     })
-// app.post("/create", (req, res) => {
-//   const sql =
-//     "INSERT INTO product (`ptitle`, `pdesc` ,`pprice` , `pimage`) VALUES (?)";
-//   const values = [
-//     req.body.ptitle,
-//     req.body.pdesc,
-//     req.body.pprice,
-//     req.body.pimage,
-//   ];
-//   db.query(sql, [values], (err, data) => {
-//     if (err) return res.json("Error");
-//     return res.json(data);
-//   });
-// });
-// app.post("/create", (req, res) => {
-//   // const { cid, Delivery, price, O_status, O_Timedate } = req.body;
+app.post("/order_update", (req, res) => {
+  const sql = `UPDATE orders SET O_status = (?) where cid = (?)`;
 
-//   const sql = `
-//     INSERT INTO orders (cid, Delivery, price, O_status, O_Timedate)
-//     VALUES (?))`;
+  const values = [req.body.O_status, req.body.cid];
+  db.query(sql, [values], (err, date) => {
+    if (err) return res.json("ERROR");
+    return res.json(data);
+  });
+});
 
-//   const values = [
-//     req.body.cid,
-//     req.body.Deliver,
-//     req.body.price,
-//     req.body.O_status,
-//     req.body.O_Timedate,
-//   ];
-//   db.query(sql, [values], (err, date) => {
-//     if (err) return res.json("ERROR");
-//     return res.json(data);
-//   });
-// });
-//   connection.query(
-//     sql,
-//     [cid, Delivery, price, O_status, O_Timedate],
-//     (err, results) => {
-//       if (err) {
-//         console.error("Error creating order:", err);
-//         res.status(500).send("Internal Server Error");
-//         return;
-//       }
+// ---------------------------------------- Customers CRUD ------------------------------------
 
-//       console.log("Order created successfully");
-//       res.status(200).json({ message: "Order created successfully" });
-//     }
-//   );
-// });
+app.get("/customers_read", (req, res) => {
+  const sql = "SELECT * FROM customer";
+  db.query(sql, (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+  //res.json("Hello from Backend");
+});
 
-// app.put("/update", (req, res) => {
-//   const sql =
-//     "Update Product ptitle= ? pdesc = ? pprice = ? pimage = ? WHERE pid = ?";
-//   const values = [
-//     req.body.ptitle,
-//     req.body.pdesc,
-//     req.body.pprice,
-//     req.body.pimage,
-//     req.body.pid,
-//   ];
+// ---------------------------------------- Products CRUD ------------------------------------
 
-//   db.query(sql, [values], (err, data) => {
-//     if (err) return res.json("Error");
-//     return res.json(data);
-//   });
-// });
-// ++++++++++++++++++++++++++++Product++++++++++++++++++++++++++++++++++++++
-//create
-app.post("/create", (req, res) => {
+app.post("/product_add", (req, res) => {
   const sql =
     "INSERT INTO product (`ptitle`, `pdesc` ,`pprice` , `pimage`) VALUES (?)";
   const values = [
@@ -112,9 +91,40 @@ app.post("/create", (req, res) => {
   ];
   db.query(sql, [values], (err, data) => {
     if (err) return res.json("Error");
-    return res.send("Database Created");
+    return res.json(data);
   });
 });
+
+app.get("/product_read", (req, res) => {
+  const sql = "SELECT * FROM product";
+  db.query(sql, (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+  //res.json("Hello from Backend");
+});
+
+app.put("/product_update", (req, res) => {
+  const sql =
+    "Update Product ptitle= ? pdesc = ? pprice = ? pimage = ? WHERE pid = ?";
+  const values = [
+    req.body.ptitle,
+    req.body.pdesc,
+    req.body.pprice,
+    req.body.pimage,
+    req.body.pid,
+  ];
+
+  db.query(sql, [values], (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
+app.listen(8085, () => {
+  console.log("listening");
+});
+
 // // update
 // app.put("/update/:id", (req, res) => {
 //   const sql =
@@ -129,16 +139,6 @@ app.post("/create", (req, res) => {
 //   db.query(sql, [...values, id], (err, data) => {
 //     if (err) return res.json("Error");
 //     return res.json(data);
-//   });
-// });
-
-// app.get("/create", (req, res) => {
-//   let sql = "CREATE DATABASE On_Campus_Kicks";
-
-//   db.query(sql, (err, result) => {
-//     if (err) throw err;
-//     console.log(result);
-//     res.send("Database Created");
 //   });
 // });
 
@@ -207,7 +207,3 @@ app.post("/create", (req, res) => {
 //     console.log("CustomerHelp Table Created");
 //   });
 // });
-
-app.listen(8085, () => {
-  console.log("listening");
-});

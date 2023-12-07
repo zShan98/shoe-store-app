@@ -10,11 +10,16 @@ import contexts from "../context/ValueContext";
 
 import shoes from "../../shoes";
 import StarRateIcon from "@mui/icons-material/StarRate";
+import axios from "axios";
 
 const Preview = (props) => {
+  const { cid } = props;
   const nav = useNavigate();
   const { productId } = useParams();
-
+  const delivery = 0;
+  const O_status = false;
+  const price = 300;
+  const O_Timedate = new Date();
   let value = React.useContext(contexts.ValueContext);
   const [add, setAdd] = React.useState(true);
 
@@ -35,9 +40,21 @@ const Preview = (props) => {
 
   const handlechkorder = () => {
     setchkorder(!chkorder);
-    if(!props.islogin)(
-      nav("/shop/signup")
-    )
+    if (!props.islogin) {
+      nav("/shop/signup");
+    }
+    axios
+      .post("http://localhost:8085/order", {
+        cid,
+        delivery,
+        price,
+        O_status,
+        O_Timedate,
+      })
+      .then((res) => {
+        console.log(res.data.message); // Log the server response
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleClick = (bool) => {
@@ -100,7 +117,7 @@ const Preview = (props) => {
             </button>
           )}
           <br />
-          <button onClick={handlechkorder} >Order Now</button>
+          <button onClick={handlechkorder}>Order Now</button>
         </div>
       </div>
       {chkorder ? (

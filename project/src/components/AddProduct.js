@@ -43,7 +43,12 @@ export const AddProduct = (props) => {
 
     /* Backend Code */
     axios
-      .post("http://localhost:8085/create", { ptitle, pdesc, pprice, pimage })
+      .post("http://localhost:8085/product_add", {
+        ptitle,
+        pdesc,
+        pprice,
+        pimage,
+      })
       .then((res) => {
         console.log(res);
         // navigate("/");

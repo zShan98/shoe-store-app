@@ -1,10 +1,22 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 const Order_recipt = (props) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [O_status, setO_status] = useState(false);
+  const [cid, setcid] = useState(props.cid);
 
   function handleCheck(event) {
-    setIsChecked(event.target.checked);
+    setO_status(event.target.checked);
+
+    axios
+      .put("http://localhost:8085/order_update", {
+        O_status,
+        cid,
+      })
+      .then((res) => {
+        console.log(res);
+        // navigate("/");
+      })
+      .catch((err) => console.log(err));
   }
   //function Orders() {}
   return (
@@ -14,9 +26,8 @@ const Order_recipt = (props) => {
         <td>{props.date}</td>
         <td>{props.customer_name}</td>
         <td>{props.channel}</td>
-        <td>{isChecked ? "fullfilled" : "Unfulfilled"}</td>
-        <td>{props.no_items}</td>
-        <td>{props.Deleivery}</td>
+        <td>{props.status}</td>
+        <td>{props.Delivery}</td>
         <td>
           <input
             type="checkbox"

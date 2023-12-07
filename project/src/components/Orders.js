@@ -8,7 +8,7 @@ export const Orders = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8085/") // Adjust the URL if needed
+      .get("http://localhost:8085/order_read") // Adjust the URL if needed
       .then((res) => setOrders(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -24,7 +24,6 @@ export const Orders = () => {
             <th>Customer</th>
             <th>Channel</th>
             <th>Status</th>
-            <th>Items</th>
             <th>Delivery</th>
             <th>Delivered</th>
           </thead>
@@ -33,12 +32,12 @@ export const Orders = () => {
             <Order_recipt
               key={i}
               order_id={item.oid}
-              date={item.date}
-              customer_name={item.Fname}
+              date={item.O_Timedate}
+              customer_name={item.cid}
               channel={"Online Store"}
-              status={item.status}
+              status={item.O_status}
               no_items={item.no_items}
-              Delivery={item.Delivery}
+              Delivery={item.delivery}
             />
           ))}
         </table>
