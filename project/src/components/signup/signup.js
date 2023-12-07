@@ -8,6 +8,7 @@ import {Link} from "react-router-dom"
 export const Signup = (props) => {
     const nav = useNavigate()
     
+    
 
     const handleSubmit = (e)=> {
         e.preventDefault();
