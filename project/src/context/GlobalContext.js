@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import main from "../main.json";
 import img from "../assets/ProductImages/2.png";
-
+import axios from "axios";
 const MyContext = createContext(main.products.productList);
 
 export const GlobalContext = ({ children }) => {
@@ -22,14 +22,15 @@ export const GlobalContext = ({ children }) => {
 
   function UpdateProduct(UpId, newproduct) {
     // productList = productList.filter((product)=> product.id !== delId);
+
     console.log(newproduct);
     const indexva = main.products.productList.findIndex(
       (p) => p.id === newproduct.id
     );
-    main.products.productList[indexva].title = newproduct.title;
-    main.products.productList[indexva].category = newproduct.category;
-    main.products.productList[indexva].price = newproduct.price;
-    main.products.productList[indexva].delivery = newproduct.delivery;
+    // main.products.productList[indexva].title = newproduct.title;
+    // main.products.productList[indexva].category = newproduct.category;
+    // main.products.productList[indexva].price = newproduct.price;
+    // main.products.productList[indexva].delivery = newproduct.delivery;
 
     setproducts(main.products.productList);
     console.log(main.products.productList);

@@ -14,13 +14,14 @@ const db = mysql.createConnection({
 });
 
 app.get("/", (req, res) => {
-  const sql = "SELECT * FROM Orders";
+  const sql = "SELECT * FROM Product";
   db.query(sql, (err, data) => {
     if (err) return res.json("Error");
     return res.json(data);
   });
-  //res.json("Hello from Backend");
+  console.log("Hello from Backend");
 });
+
 // app.post('/create', (req,res)=> {
 //     const sql = "INSERT INTO contact (`Name`, `Email` ,`Subject` , `Message`) VALUES (?)";
 //     const values = [
@@ -33,8 +34,54 @@ app.get("/", (req, res) => {
 //         if(err) return res.json("Error");
 //         return res.json(data);
 //     })
+app.put("/update", (req, res) => {
+  const sql =
+    "Update Product ptitle= ? pdesc = ? pprice = ? pimage = ? WHERE pid = ?";
+  const values = [
+    req.body.ptitle,
+    req.body.pdesc,
+    req.body.pprice,
+    req.body.pimage,
+    req.body.pid,
+  ];
 
-// })
+  db.query(sql, [values], (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+// ++++++++++++++++++++++++++++Product++++++++++++++++++++++++++++++++++++++
+//create
+// app.post("/create", (req, res) => {
+//   const sql =
+//     "INSERT INTO product (`ptitle`, `pdesc` ,`pprice` , `pimage`) VALUES (?)";
+//   const values = [
+//     req.body.ptitle,
+//     req.body.pdesc,
+//     req.body.pprice,
+//     req.body.pimage,
+//   ];
+//   db.query(sql, [values], (err, data) => {
+//     if (err) return res.json("Error");
+//     return res.json(data);
+//   });
+// });
+// // update
+// app.put("/update/:id", (req, res) => {
+//   const sql =
+//     "UPDATE product ptitle = ? pdesc= ? pprice = ? pimage =? WHERE pid = ?";
+//   const values = [
+//     req.body.ptitle,
+//     req.body.pdesc,
+//     req.body.pprice,
+//     req.body.pimage,
+//   ];
+//   const id = req.params.pid;
+//   db.query(sql, [...values, id], (err, data) => {
+//     if (err) return res.json("Error");
+//     return res.json(data);
+//   });
+// });
 
 // app.get("/create", (req, res) => {
 //   let sql = "CREATE DATABASE On_Campus_Kicks";

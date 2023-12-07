@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { GetContext } from "../context/GlobalContext";
 import addicon from "../assets/icons/addProduct.svg";
@@ -6,11 +6,21 @@ import deleteicon from "../assets/icons/deleteicon.svg";
 import img from "../assets/ProductImages/2.png";
 import { AddProduct } from "./AddProduct";
 import main from "../main.json";
+import axios from "axios";
 
 export const ProductList = (props) => {
+  const [pproducts, setpproducts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8085/") // Adjust the URL if needed
+      .then((res) => setpproducts(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   const { products, deleteProduct } = GetContext();
 
-  const head = ["Name", "Description", "Category", "Price", "Image", "Delete"];
+  const head = ["Name", "Description", "Price", "Image", "Delete"];
   const headItems = head.map((item) => {
     return <th className="">{item}</th>;
   });
@@ -22,18 +32,17 @@ export const ProductList = (props) => {
     console.log("Delete button clicked !");
     deleteProduct(iid);
   };
-  const bodyItems = main.products.productList.map((item) => {
+  const bodyItems = pproducts.map((item, i) => {
     return (
       <>
         <tr className="">
           <Link to={`update-product`} state={{ Data: item }}>
-            <td>{item.title}</td>
+            <td>{item.ptitle}</td>
           </Link>
-          <td>{item.description}</td>
-          <td>{item.category}</td>
-          <td>{item.price}</td>
+          <td>{item.pdesc}</td>
+          <td>{item.pprice}</td>
           <td>
-            <img src={img} alt="product" />
+            <img src={item.img} alt="product" />
           </td>
           <button className="x-btn" onClick={() => handleDelete(item.id)}>
             {" "}

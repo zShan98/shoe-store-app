@@ -1,9 +1,18 @@
-import React from "react";
-import Order_recipt from "./Order_recipt";
+import React, { useEffect, useState } from "react";
+import Order_recipt from "./Order_recipt"; // Make sure the file name is correct
 import Order_filters from "./Order_filters";
-import main from "../main.json";
+import axios from "axios";
 
 export const Orders = () => {
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8085/") // Adjust the URL if needed
+      .then((res) => setOrders(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <div className="order_structure">
@@ -14,27 +23,24 @@ export const Orders = () => {
             <th>Date</th>
             <th>Customer</th>
             <th>Channel</th>
-            <th>Payment</th>
             <th>Status</th>
             <th>Items</th>
-            <th>Deleivery</th>
+            <th>Delivery</th>
             <th>Delivered</th>
           </thead>
 
-          {main.orders.receipts.map((item) => {
-            return (
-              <Order_recipt
-                order_id={item.order_id}
-                date={item.date}
-                customer_name={item.customer_name}
-                channel={item.channel}
-                payment={item.payment}
-                stats={item.status}
-                no_items={item.no_items}
-                Deleivery={item.Deleivery}
-              />
-            );
-          })}
+          {orders.map((item, i) => (
+            <Order_recipt
+              key={i}
+              order_id={item.oid}
+              date={item.date}
+              customer_name={item.Fname}
+              channel={"Online Store"}
+              status={item.status}
+              no_items={item.no_items}
+              Delivery={item.Delivery}
+            />
+          ))}
         </table>
       </div>
     </>

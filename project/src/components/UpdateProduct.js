@@ -1,24 +1,32 @@
 import React from "react";
+import axios from "axios";
 import { useState } from "react";
 import { GetContext } from "../context/GlobalContext";
 // import { Routes, Route, Link } from "react-router-dom";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 export const UpdateProduct = (props) => {
+  const [ptitle, setptitle] = useState([]);
+  const [pdesc, setpdesc] = useState([]);
+  const [pprice, setpprice] = useState([]);
+  const [pimage, setpimage] = useState([]);
+  // const [pid] = useParams("");
   const nav = useNavigate();
 
   const location = useLocation();
   const { Data } = location.state;
-  const [product, setProduct] = useState({
-    id: "",
-    title: "",
-    description: "",
-    category: "",
-    price: 0,
-    delivery: 0,
-    img: "",
-  });
+
+  const pid = Data.id;
+  // const [product, setProduct] = useState({
+  //   id: "",
+  //   title: "",
+  //   description: "",
+  //   category: "",
+  //   price: 0,
+  //   delivery: 0,
+  //   img: "",
+  // });
   const { UpdateProduct } = GetContext();
 
   const { register } = useForm({
@@ -52,10 +60,35 @@ export const UpdateProduct = (props) => {
     resetForm();
     // nav("/admin/products");
   };
-
+  /* Backend Code */
+  // axios
+  //   .put("http://localhost:8085/update" + pid, {
+  //     ptitle,
+  //     pdesc,
+  //     pprice,
+  //     pimage,
+  //   })
+  //   .then((res) => {
+  //     console.log(res);
+  //     nav("/");
+  //   })
+  //   .catch((err) => console.log(err));
+  axios
+    .put("http://localhost:8085/update", {
+      ptitle,
+      pdesc,
+      pprice,
+      pimage,
+      pid,
+    })
+    .then((res) => {
+      console.log(res);
+      // navigate("/");
+    })
+    .catch((err) => console.log(err));
   return (
     <div className="addProduct">
-      <form id="update-product-form">
+      <form id="update-product-form" onSubmit={handleForm}>
         <h1 className="product-header">Update Product</h1>
         <div className="inputbox">
           <label>Product Title</label>
@@ -74,6 +107,7 @@ export const UpdateProduct = (props) => {
             name="productDesc"
             {...register("productDesc")}
             required
+            onChange={(e) => setpdesc(e.target.value)}
           ></textarea>
         </div>
         <div className="siblings">
@@ -86,6 +120,7 @@ export const UpdateProduct = (props) => {
               name="productPrice"
               {...register("productPrice")}
               required
+              onChange={(e) => setpprice(e.target.value)}
             />
           </div>
           <div className="inputbox price">
@@ -128,6 +163,7 @@ export const UpdateProduct = (props) => {
               name="pimage"
               accept="image/png, image/jpg, image/jpeg"
               multiple
+              onChange={(e) => setpimage(e.target.value)}
             />
           </div>
         </div>
