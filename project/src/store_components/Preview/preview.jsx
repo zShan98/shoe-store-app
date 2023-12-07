@@ -3,7 +3,7 @@ import "./preview.css";
 import main from "../../main.json";
 import img1 from "../../assets/ProductImages/2.png";
 import { OrderModal } from "../OrderModal/OrderModal";
-
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 import contexts from "../context/ValueContext";
@@ -12,6 +12,7 @@ import shoes from "../../shoes";
 import StarRateIcon from "@mui/icons-material/StarRate";
 
 const Preview = (props) => {
+  const nav = useNavigate();
   const { productId } = useParams();
 
   let value = React.useContext(contexts.ValueContext);
@@ -34,6 +35,9 @@ const Preview = (props) => {
 
   const handlechkorder = () => {
     setchkorder(!chkorder);
+    if(!props.islogin)(
+      nav("/shop/signup")
+    )
   };
 
   const handleClick = (bool) => {
@@ -96,7 +100,7 @@ const Preview = (props) => {
             </button>
           )}
           <br />
-          <button onClick={handlechkorder}>Order Now</button>
+          <button onClick={handlechkorder} >Order Now</button>
         </div>
       </div>
       {chkorder ? (

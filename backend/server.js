@@ -14,12 +14,12 @@ const db = mysql.createConnection({
 });
 
 app.get("/", (req, res) => {
-  const sql = "SELECT * FROM Product";
+  const sql = "SELECT * FROM Orders";
   db.query(sql, (err, data) => {
     if (err) return res.json("Error");
     return res.json(data);
   });
-  console.log("Hello from Backend");
+  //res.json("Hello from Backend");
 });
 
 // app.post('/create', (req,res)=> {
@@ -34,24 +34,6 @@ app.get("/", (req, res) => {
 //         if(err) return res.json("Error");
 //         return res.json(data);
 //     })
-app.put("/update", (req, res) => {
-  const sql =
-    "Update Product ptitle= ? pdesc = ? pprice = ? pimage = ? WHERE pid = ?";
-  const values = [
-    req.body.ptitle,
-    req.body.pdesc,
-    req.body.pprice,
-    req.body.pimage,
-    req.body.pid,
-  ];
-
-  db.query(sql, [values], (err, data) => {
-    if (err) return res.json("Error");
-    return res.json(data);
-  });
-});
-// ++++++++++++++++++++++++++++Product++++++++++++++++++++++++++++++++++++++
-//create
 // app.post("/create", (req, res) => {
 //   const sql =
 //     "INSERT INTO product (`ptitle`, `pdesc` ,`pprice` , `pimage`) VALUES (?)";
@@ -66,6 +48,73 @@ app.put("/update", (req, res) => {
 //     return res.json(data);
 //   });
 // });
+// app.post("/create", (req, res) => {
+//   // const { cid, Delivery, price, O_status, O_Timedate } = req.body;
+
+//   const sql = `
+//     INSERT INTO orders (cid, Delivery, price, O_status, O_Timedate)
+//     VALUES (?))`;
+
+//   const values = [
+//     req.body.cid,
+//     req.body.Deliver,
+//     req.body.price,
+//     req.body.O_status,
+//     req.body.O_Timedate,
+//   ];
+//   db.query(sql, [values], (err, date) => {
+//     if (err) return res.json("ERROR");
+//     return res.json(data);
+//   });
+// });
+//   connection.query(
+//     sql,
+//     [cid, Delivery, price, O_status, O_Timedate],
+//     (err, results) => {
+//       if (err) {
+//         console.error("Error creating order:", err);
+//         res.status(500).send("Internal Server Error");
+//         return;
+//       }
+
+//       console.log("Order created successfully");
+//       res.status(200).json({ message: "Order created successfully" });
+//     }
+//   );
+// });
+
+// app.put("/update", (req, res) => {
+//   const sql =
+//     "Update Product ptitle= ? pdesc = ? pprice = ? pimage = ? WHERE pid = ?";
+//   const values = [
+//     req.body.ptitle,
+//     req.body.pdesc,
+//     req.body.pprice,
+//     req.body.pimage,
+//     req.body.pid,
+//   ];
+
+//   db.query(sql, [values], (err, data) => {
+//     if (err) return res.json("Error");
+//     return res.json(data);
+//   });
+// });
+// ++++++++++++++++++++++++++++Product++++++++++++++++++++++++++++++++++++++
+//create
+app.post("/create", (req, res) => {
+  const sql =
+    "INSERT INTO product (`ptitle`, `pdesc` ,`pprice` , `pimage`) VALUES (?)";
+  const values = [
+    req.body.ptitle,
+    req.body.pdesc,
+    req.body.pprice,
+    req.body.pimage,
+  ];
+  db.query(sql, [values], (err, data) => {
+    if (err) return res.json("Error");
+    return res.send("Database Created");
+  });
+});
 // // update
 // app.put("/update/:id", (req, res) => {
 //   const sql =
@@ -103,7 +152,7 @@ app.put("/update", (req, res) => {
 //     console.log(result);
 //     res.send("Seller Table Created");
 //   });
-// });
+//  });
 //customer
 // app.get("/create", (res, req) => {
 //   let sql = `CREATE TABLE IF NOT EXISTS Customer(
@@ -124,12 +173,10 @@ app.put("/update", (req, res) => {
 //product
 // app.get("/create", (res, req) => {
 //   let sql = `CREATE TABLE IF NOT EXISTS Product(
-//           pid varchar(10),
-//           pname varchar(10),
-//           p_desccription Text,
-//           p_image Text,
-//           cat_id varchar(10),
-//           sid varchar(10))`;
+//           pid int(10),
+//           ptitle varchar(10),
+//           p_desc Text,
+//           p_image BLOB)`;
 //   db.query(sql, (err, result) => {
 //     if (err) throw err;
 //     console.log(result);
@@ -145,7 +192,19 @@ app.put("/update", (req, res) => {
 //   db.query(sql, (err, result) => {
 //     if (err) throw err;
 //     console.log(result);
-//     console.log("Product Table Created");
+//     console.log("Order Table Created");
+//   });
+// });
+
+// app.get("/create", (res, req) => {
+//   let sql = `CREATE TABLE IF NOT EXISTS CustomerHelp (
+//             cid varchar(11),
+//             subject Text,
+//             message Text)`;
+//   db.query(sql, (err, result) => {
+//     if (err) throw err;
+//     console.log(result);
+//     console.log("CustomerHelp Table Created");
 //   });
 // });
 
