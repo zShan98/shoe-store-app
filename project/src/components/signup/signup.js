@@ -2,7 +2,7 @@ import React from "react"
 // import "./signup.css"
 import { useState } from "react"
 import {useNavigate} from "react-router-dom"
-
+import {Link} from "react-router-dom"
 
 
 export const Signup = (props) => {
@@ -48,7 +48,7 @@ export const Signup = (props) => {
           </div>
           <div class="Kform-footer">
           <p>Already a member?</p>
-          <a href="">Login</a>
+          <Link to="/shop/login">Login</Link>
           </div>
       </form>
     </div>

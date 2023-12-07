@@ -10,7 +10,7 @@ import Shop from "./store_components/Shop/shop";
 import { Routes, Route } from "react-router-dom";
 import Preview from "./store_components/Preview/preview";
 import { Signup } from "./components/signup/signup";
-
+import { Cus_login } from "./store_components/CustomerLogin/Cus_login";
 
 export const StoreFront = () => {
 
@@ -62,6 +62,7 @@ export const StoreFront = () => {
               <Route path="register" element={<Register />}></Route>
               <Route path="contact" element={<Contact />}></Route>
               <Route path="signup" element={<Signup ChangeLoginState ={ChangeLoginState} handleCustomer={handleCustomer}/>}></Route>
+              <Route path="login" element={<Cus_login ChangeLoginState ={ChangeLoginState} handleCustomer={handleCustomer}/>}></Route>
             </Route>
           </Routes>
         </div>

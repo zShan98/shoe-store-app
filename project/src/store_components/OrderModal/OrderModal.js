@@ -12,12 +12,15 @@ export const OrderModal = (props) => {
   const [total, settotal] = useState(0);
   const [count, setcount] = useState(0);
     
+  const handleData = ()=> {
+    props.handleClick(false)
 
+  }
   return (
     <>
-      <div className="cart-screen">
-        <div className="cart-container">
-          <div className="cart-header">
+      <div className="modal-screen" onClick={handleData}>
+        <div className="modal-container">
+          <div className="modal-header">
           <div className="modal-main">
             Order Placed Successfully
           </div>
