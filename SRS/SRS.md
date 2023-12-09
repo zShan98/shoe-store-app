@@ -78,16 +78,16 @@ The design strategy focuses on a responsive and aesthetically pleasing user inte
 ## 8.1. DATABASE DESIGN
 *	Database management system: MySQL
 *	Tables: 
-    *Customer=>C_ID,C_Email
-    *Seller=>S_ID
-    *Payment=>Pay_ID
-    *Discount=>D_ID
-    *Products=>P_ID
-    *Order=>O_ID
+    *Customer=>C_ID,C_Email,C_Name,C_Phone,C_Address
+    *Seller=>S_ID,S_email,S_Name,S_Phone,S_Address
+    *Payment=>Pay_ID,Pay_totamnt
+    *Discount=>D_ID,D_percent
+    *Products=>P_ID,P_name,P_desc,P_Price
+    *Order=>O_ID,O_date
 
 # 9. APPLICATION DESIGN
 *	User Interface: Responsive web design
-*	Frontend: React JS
+*	Frontend: React JS and ES6
 *	Backend: Node.js, Express.js
 * Database: MySQL
 # 10. REFERENCES
