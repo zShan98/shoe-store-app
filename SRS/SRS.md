@@ -14,12 +14,13 @@
 ## 1.1. Purpose of Document
 This document serves as the Software Requirements Specification (SRS) and Software Design Specification (SDS) for Campus Kicks, a shoe website targeting students and young individuals with leadership minds.
 ## 1.2. Intended Audience
-The intended audience for this document includes developers, designers, project managers, and stakeholders involved in the development and maintenance of Campus Kicks.
+The intended audience for this project includes students, campus-goers, and young people alike.
 # 2. OVERALL SYSTEM DESCRIPTION
 ## 2.1. Project Background
 Campus Kicks is an online platform designed to provide a unique shopping experience for students and young leaders, offering a curated selection of trendy and quality footwear.
 ## 2.2. Project Scope
 The scope of Campus Kicks includes an e-commerce platform with features such as product browsing, user accounts, cart management, and secure checkout.
+We have tried to make user experience as smooth as possible for both sellers and customers, easily transitioning b/w tasks.
 ## 2.3. Not In Scope
 The project does not include physical inventory management or brick-and-mortar store operations.
 ## 2.4. Project Objectives
@@ -89,7 +90,7 @@ The design strategy focuses on a responsive and aesthetically pleasing user inte
 *	User Interface: Responsive web design
 *	Frontend: React JS and ES6
 *	Backend: Node.js, Express.js
-* Database: MySQL
+*  Database: MySQL
 # 10. REFERENCES
 We took Reference from NDURE Shoes as an inspiration and then focused on a specific audience area, i.e., Students.
 # 11. APPENDICES
