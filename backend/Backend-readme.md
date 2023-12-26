@@ -5,6 +5,6 @@ Here we have 2 main files:
 * queries for insertion updation and deletion on database i.e. DML
 
 <br> 2) package.json containing all libraries.
-*cors library
-*express js library
+* cors library
+* express js library
 

@@ -1,4 +1,4 @@
-## Software Requirement and Design Specifications<br>
+## Software Requirement and Design Specifications File<br>
 # Campus Kick’s<br>
 
 ### Course Code:<br>
